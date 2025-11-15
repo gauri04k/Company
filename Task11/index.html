@@ -42,14 +42,14 @@
         let posY = 0;
 
         let step = 2;
-        let direction = "right"; // first movement = left → right
+        let direction = "right"; 
 
         let interval = setInterval(() => {
 
             // 1 → move right
             if (direction === "right") {
                 posX += step;
-                if (posX >= 260) { // 300 outer - 40 box
+                if (posX >= 260) { 
                     direction = "down";
                 }
             }
@@ -74,7 +74,7 @@
             else if (direction === "up") {
                 posY -= step;
                 if (posY <= 0) {
-                    clearInterval(interval); // 🔥 STOP at initial point
+                    clearInterval(interval); // stop kiya initial ko:)
                 }
             }
 
