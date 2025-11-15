@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.resume {
+    width: 70%;
+    margin: 30px auto;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 8px;
+    padding: 20px 40px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+h2 {
+    border-bottom: 2px solid #000;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    color: #222;
+    opacity: ;
+}
+
+a {
+    color: #145ba2;
+    text-decoration: none;
+}
+
+hr {
+    border: 1px solid #000;
+}
+
+.percentage {
+    align-items: flex-end;
+}

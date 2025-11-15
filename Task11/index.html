@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Path Move Stop</title>
+
+    <style>
+        #outer {
+            width: 300px;
+            height: 300px;
+            border: 3px solid black;
+            position: relative;
+            margin-top: 40px;
+        }
+        
+        #inner {
+            width: 40px;
+            height: 40px;
+            background: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Move Object in Square Path & Stop</h2>
+
+    <div id="outer">
+        <div id="inner"></div>
+    </div>
+
+    <script>
+        let box = document.getElementById("inner");
+
+        // starting position
+        let posX = 0;
+        let posY = 0;
+
+        let step = 2;
+        let direction = "right"; // first movement = left → right
+
+        let interval = setInterval(() => {
+
+            // 1 → move right
+            if (direction === "right") {
+                posX += step;
+                if (posX >= 260) { // 300 outer - 40 box
+                    direction = "down";
+                }
+            }
+
+            // 2 → move down
+            else if (direction === "down") {
+                posY += step;
+                if (posY >= 260) {
+                    direction = "left";
+                }
+            }
+
+            // 3 → move left
+            else if (direction === "left") {
+                posX -= step;
+                if (posX <= 0) {
+                    direction = "up";
+                }
+            }
+
+            // 4 → move up
+            else if (direction === "up") {
+                posY -= step;
+                if (posY <= 0) {
+                    clearInterval(interval); // 🔥 STOP at initial point
+                }
+            }
+
+            box.style.left = posX + "px";
+            box.style.top = posY + "px";
+
+        }, 10);
+    </script>
+
+</body>
+
+</html>

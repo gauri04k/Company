@@ -1,0 +1,5 @@
+.card {
+    max-width: 400px;
+    margin: auto;
+    animation-fill-mode: var(#fff);
+}

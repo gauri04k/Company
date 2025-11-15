@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move Task</title>
+
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0px;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>moving box</h2>
+    <div id="box"></div>
+
+    <script>
+        let box = document.getElementById("box");
+        let position = 0;
+        let direction = "right"; // start moving right
+
+        let move = setInterval(() => {
+
+            // find screen width dynamically
+            let screenEnd = window.innerWidth - 100; // 50 = box width
+
+            if (direction === "right") {
+                position += 3; // move right
+                if (position >= screenEnd) {
+                    direction = "left"; // change direction
+                }
+            } else {
+                position -= 3; // move left
+                if (position <= 0) {
+                    direction = "right"; // change direction
+                }
+            }
+
+            box.style.left = position + "px";
+
+        }, 25);
+    </script>
+
+</body>
+
+</html>

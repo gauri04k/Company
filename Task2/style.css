@@ -1,0 +1,98 @@
+ @font-face {
+     font-family: 'Poppins';
+     src: url('Fonts/Poppins/Poppins-Black.ttf');
+     font-weight: 400;
+ }
+ 
+ body {
+     margin: 40px;
+     line-height: 1.6;
+ }
+ 
+ h2 {
+     color: #333;
+     padding-bottom: 5px;
+ }
+ 
+ ol,
+ ul {
+     margin-left: 30px;
+ }
+ 
+ ol li {
+     font-weight: bold;
+ }
+ 
+ ul li {
+     font-weight: normal;
+ }
+ 
+ table {
+     width: 100%;
+     border-collapse: collapse;
+     margin: 20px 0;
+ }
+ 
+ th,
+ td {
+     border: 1px solid #ccc;
+     padding: 10px;
+     text-align: left;
+     vertical-align: top;
+     display: flex;
+ }
+ 
+ th {
+     background-color: white;
+ }
+ 
+ caption {
+     caption-side: top;
+     font-weight: bold;
+     margin-bottom: 10px;
+     text-align: left;
+ }
+ 
+ .features {
+     margin: 10px 0 0 20px;
+     font-size: 14px;
+     list-style-type: disc;
+     text-align: left;
+     padding-left: 0px;
+ }
+ 
+ .simple-table tr:nth-child(even):not(:first-child) {
+     background-color: #e8e8e8;
+ }
+ 
+ .twins {
+     background-color: #e8e8e8;
+ }
+ 
+ .simple-table th {
+     background-color: white;
+ }
+ 
+ .complex-table th {
+     background-color: #f2f2f2;
+ }
+ 
+ .video-container {
+     position: relative;
+     width: 100%;
+     max-width: 700px;
+     height: 0;
+     padding-bottom: 56.25%;
+     margin: 30px auto;
+     border: 2px solid #ccc;
+     border-radius: 10px;
+     overflow: hidden;
+ }
+ 
+ .video-container iframe {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+ }

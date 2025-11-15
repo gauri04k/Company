@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiral Movement</title>
+
+    <style>
+        #outer {
+            width: 300px;
+            height: 300px;
+            border: 3px solid black;
+            position: relative;
+            margin-top: 40px;
+        }
+        
+        #inner {
+            width: 40px;
+            height: 40px;
+            background: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Spiral Movement</h2>
+
+    <div id="outer">
+        <div id="inner"></div>
+    </div>
+
+    <script>
+        let box = document.getElementById("inner");
+
+        let x = 0,
+            y = 0;
+        let step = 2;
+
+        // boundaries (square is 300, box is 40)
+        let leftBound = 0;
+        let rightBound = 260;
+        let topBound = 0;
+        let bottomBound = 260;
+
+        let direction = "right";
+
+        let interval = setInterval(() => {
+
+            // movement logic
+            if (direction === "right") {
+                x += step;
+                if (x >= rightBound) {
+                    direction = "down";
+                    topBound += 20; // shrink top
+                }
+            } else if (direction === "down") {
+                y += step;
+                if (y >= bottomBound) {
+                    direction = "left";
+                    rightBound -= 20; // shrink right
+                }
+            } else if (direction === "left") {
+                x -= step;
+                if (x <= leftBound) {
+                    direction = "up";
+                    bottomBound -= 20; // shrink bottom
+                }
+            } else if (direction === "up") {
+                y -= step;
+                if (y <= topBound) {
+                    direction = "right";
+                    leftBound += 20; // shrink left
+                }
+            }
+
+            // update box
+            box.style.left = x + "px";
+            box.style.top = y + "px";
+
+            // stop when spiral reaches center
+            if (leftBound > rightBound || topBound > bottomBound) {
+                clearInterval(interval);
+            }
+
+        }, 20);
+    </script>
+
+</body>
+
+</html>
